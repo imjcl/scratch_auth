@@ -9,7 +9,7 @@ class User
   field :password_salt, type: String
 
   validates_confirmation_of :password
-  validates_presence_of :password, if: :needs_password?
+  validates_presence_of :password, on: :create
 
   def encrypt_password
     self.password_salt = BCrypt::Engine.generate_salt
@@ -30,8 +30,6 @@ class User
       if User.authenticate(email, old_password)
         encrypt_password
       end
-    else
-      true if password
     end 
   end
 end
