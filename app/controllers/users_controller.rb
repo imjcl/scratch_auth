@@ -26,6 +26,13 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def update
+    @user = User.find(params[:id])
+    #render plain: user_params_without_password.inspect
+    @user.update_attributes(user_params)
+    redirect_to root_path
+  end
+
   def destroy
     User.find(params[:id]).remove
 
@@ -35,5 +42,9 @@ class UsersController < ApplicationController
   private
     def user_params
       params.require(:user).permit(:email, :password, :password_confirmation)
+    end
+
+    def user_params_without_password
+      params.require(:user).permit(:email)
     end
 end
