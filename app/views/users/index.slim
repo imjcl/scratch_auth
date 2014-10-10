@@ -1,6 +1,12 @@
 h1
   |List of users....
 
-- @users.each do |u|
-  p
-    = link_to u.email, user_path(u.id)
+table
+  - @users.each do |u|
+    tr
+      td
+        = link_to u.email, user_path(u.id)
+      td
+        |Edit
+      td
+        = link_to 'Remove', user_remove_path(u.id) , data: { confirm: 'Are you sure?' }
