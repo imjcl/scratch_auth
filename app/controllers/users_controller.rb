@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :require_login, only: [:edit, :change_password]
   def index
     @users = User.all
   end
@@ -45,5 +46,11 @@ class UsersController < ApplicationController
   private
     def user_params
       params.require(:user).permit(:email, :password, :password_confirmation, :old_password)
+    end
+
+    def require_login
+      unless logged_in?
+        redirect_to log_in_path
+      end
     end
 end
