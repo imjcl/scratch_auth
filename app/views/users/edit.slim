@@ -8,3 +8,6 @@ h1
 
   p
     = f.submit "Update user"
+
+p
+  = link_to 'Change Password', user_password_edit_path(@user.id)

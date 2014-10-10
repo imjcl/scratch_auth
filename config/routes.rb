@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/users/:id' => 'users#show', as: :user
   patch '/users/:id' => 'users#update'
   get '/users/edit/:id' => 'users#edit', as: :user_edit
+  get '/users/edit/:id/password' => 'users#change_password', as: :user_password_edit
   get '/users/destroy/:id' => 'users#destroy', as: :user_remove
 
   get '/log-in' => 'sessions#new'

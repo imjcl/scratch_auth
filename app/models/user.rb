@@ -2,7 +2,7 @@ class User
   include Mongoid::Document
   before_create :encrypt_password
   before_update :needs_password?
-  attr_accessor :password
+  attr_accessor :password, :old_password
 
   field :email, type: String
   field :password_hash, type: String
@@ -24,10 +24,10 @@ class User
   end
 
   def needs_password?
-    if password.nil?
-      puts 'The password is currently empty...'
-    else
-      encrypt_password
+    unless password
+      if User.authenticate(email, old_password)
+        encrypt_password
+      end
     end 
   end
 end
