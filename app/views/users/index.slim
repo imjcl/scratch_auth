@@ -3,4 +3,4 @@ h1
 
 - @users.each do |u|
   p
-    = u.email
+    = link_to u.email, user_path(u.id)
