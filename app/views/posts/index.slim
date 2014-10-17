@@ -1,5 +1,5 @@
 div class="latest"
-  h2
+  h2 class="title"
     = @posts.first.title
 
   p class="date"
@@ -10,7 +10,8 @@ div class="latest"
 
 div class="other-posts"
   h3 Older Posts 
-- @posts.each do |p|
-  - unless p == @posts.first
-    p
-      = link_to p.title, post_path(p.slug)
+  - @posts.each do |p|
+    - unless p == @posts.first
+      p
+        => link_to p.title, post_path(p.slug)
+        = "- #{posted_on p}"
