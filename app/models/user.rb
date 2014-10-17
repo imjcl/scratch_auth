@@ -12,6 +12,7 @@ class User
   validates_presence_of :password, on: :create
 
   belongs_to :role
+  has_many :posts
 
   def encrypt_password
     self.password_salt = BCrypt::Engine.generate_salt
