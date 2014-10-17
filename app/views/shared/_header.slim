@@ -1,9 +1,12 @@
-h1 im.jamliu
+h1 class="logo"
+  = link_to 'im.jamliu', root_path
 
 nav
   ul class="list-unstyled"
-    li Home
-    li Blog
+    li
+      = link_to 'Home', root_path
+    li 
+      =link_to 'Blog', blog_path
     li Projects
     li Stream
     li Contact
