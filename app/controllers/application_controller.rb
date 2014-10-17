@@ -16,6 +16,16 @@ class ApplicationController < ActionController::Base
     unless logged_in?
       redirect_to log_in_path
     end
+  end
+
+  def is_admin?
+    @current_user.role_id == 'Administrator'
   end  
+
+  def require_admin
+    unless is_admin?
+      redirect_to log_in_path
+    end
+  end
 
 end
