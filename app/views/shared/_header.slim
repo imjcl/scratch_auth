@@ -3,9 +3,9 @@ h1 class="logo"
 
 nav
   ul class="list-unstyled"
-    li
+    li class=('active' if current_page? root_path)
       = link_to 'Home', root_path
-    li 
+    li class=('active' if in_path? 'blog')
       =link_to 'Blog', blog_path
     li Projects
     li Stream

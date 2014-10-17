@@ -1,18 +1,32 @@
+%header-links {
+  a {
+    color: #333;
+    &:hover {
+      text-decoration: none;
+      color: #BBB;
+    }
+  }
+}
 header {
   @extend .col-lg-4;
-
+  @extend %header-links;
   h1 {
     font-family: 'Roboto', sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 4em;
 
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
+
+  a {
+
+  }
 }
 
 nav {
+  @extend %header-links;
   font-weight: 300;
   font-size: 1.5em;
 
@@ -21,5 +35,11 @@ nav {
 
   li {
     margin: 8px 0;
+    &.active {
+
+      a {
+        color: #BBB;
+      }
+    }
   }
 }
