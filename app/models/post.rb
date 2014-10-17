@@ -5,5 +5,7 @@ class Post
   field :title, type: String
   field :body, type: String
 
+  validates_presence_of :title
+
   belongs_to :user
 end
