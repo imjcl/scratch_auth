@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :require_login, only: [:new, :edit]
   def index
-    @posts = Post.all
+    @posts = Post.all.desc(:created_at)
   end
 
   def new
