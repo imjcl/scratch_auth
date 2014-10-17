@@ -1,0 +1,12 @@
+= form_for @post do |f|
+  p
+    => f.label :title
+    = f.text_field :title
+
+  p
+    = f.label :body
+  p
+    = f.text_area :body, cols: 72, rows: 15
+
+  p
+    = f.submit "Create Post"
