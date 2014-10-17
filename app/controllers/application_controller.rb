@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
   end
 
   def is_admin?
-    @current_user.role_id == 'Administrator'
+    current_user.role_id == 'Administrator'
   end  
 
   def require_admin
