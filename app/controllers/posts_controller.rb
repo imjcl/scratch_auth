@@ -4,7 +4,11 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    if logged_in?
+      @post = Post.new
+    else
+      redirect_to root_path
+    end
   end
 
   def create
@@ -21,7 +25,11 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find_by(slug: params[:slug])
+    if logged_in?
+      @post = Post.find_by(slug: params[:slug])
+    else
+      redirect_to root_path
+    end
   end
 
   def update
