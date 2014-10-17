@@ -23,6 +23,9 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find_by(slug: params[:slug])
+    unless is_author? || is_admin?
+      redirect_to root_path
+    end
   end
 
   def update
@@ -34,5 +37,9 @@ class PostsController < ApplicationController
   private
     def post_params
       params.require(:post).permit(:title, :body, :user_id)
+    end
+
+    def is_author?
+      @current_user.id == @post.created_by
     end
 end

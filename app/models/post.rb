@@ -3,6 +3,7 @@ class Post
   include Mongoid::Timestamps
   before_create :create_slug, :assign_creator
   before_update :assign_updator
+  attr_reader :created_by
 
   field :title, type: String
   field :body, type: String
