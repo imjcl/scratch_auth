@@ -7,12 +7,13 @@ html
     = csrf_meta_tags
 
   body
-    div class="page-wrap"
+    div class="container"
+      div class="page-wrap"
 
-      header
-        = render 'shared/header'
-    
-        = render 'shared/sidebar'
+        header
+          = render 'shared/header'
+      
+          = render 'shared/sidebar'
 
-      main
-        = yield
+        main
+          = yield
