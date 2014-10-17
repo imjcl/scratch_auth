@@ -14,12 +14,12 @@ Rails.application.routes.draw do
   post '/log-in' => 'sessions#create'
   get '/log-out' => 'sessions#destroy', as: :log_out
 
-  get '/posts' => 'posts#index'
-  post '/posts' => 'posts#create'
-  get '/posts/new' => 'posts#new'
-  get '/posts/:slug' => 'posts#show', as: :post
-  patch '/posts/:slug' => 'posts#update'
-  get '/posts/:slug/edit' => 'posts#edit', as: :post_edit
+  get '/blog' => 'posts#index'
+  post '/blog' => 'posts#create', as: :posts
+  get '/blog/new' => 'posts#new'
+  get '/blog/:slug' => 'posts#show', as: :post
+  patch '/blog/:slug' => 'posts#update'
+  get '/blog/:slug/edit' => 'posts#edit', as: :post_edit
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
