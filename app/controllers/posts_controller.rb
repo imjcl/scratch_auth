@@ -20,6 +20,16 @@ class PostsController < ApplicationController
     @post = Post.find_by(slug: params[:slug])
   end
 
+  def edit
+    @post = Post.find_by(slug: params[:slug])
+  end
+
+  def update
+    @post = Post.find(params[:slug])
+    @post.update_attributes(post_params)
+    redirect_to posts_path
+  end
+
   private
     def post_params
       params.require(:post).permit(:title, :body, :user_id)
