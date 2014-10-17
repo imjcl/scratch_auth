@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
-  before_action :require_login, only: [:index, :new, :edit, :change_password]
+  before_action :require_login, only: [:index, :new, :edit, :change_password, :show]
   before_action :require_admin, only: [:new, :destroy]
+  before_action :require_privilege, only: [:edit, :change_password]
   def index
     @users = User.all
   end
