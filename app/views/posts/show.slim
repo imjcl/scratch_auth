@@ -1,8 +1,8 @@
-p class="date"
-  = posted_on @post
-
 h2 class="title"
   = @post.title
+  
+p class="date"
+  = posted_on @post
 
 p
   = @post.body.html_safe
