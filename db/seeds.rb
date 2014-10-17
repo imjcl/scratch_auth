@@ -9,5 +9,8 @@ default = User.new(email: 'default@localhost', password: 'test', role_id: 'Admin
 default.save
 
 # Create Roles...
-admin = Role.new({ name: 'Administrator' })
+admin = Role.new(name: 'Administrator')
 admin.save
+
+user = Role.new(name: 'User')
+user.save
