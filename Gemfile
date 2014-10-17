@@ -39,3 +39,4 @@ gem 'spring',        group: :development
 gem 'mongoid'
 gem 'bcrypt'
 gem 'slim-rails'
+gem 'bootstrap-sass'
