@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :require_login, only: [:new, :edit]
   def index
     @posts = Post.all
   end
