@@ -5,5 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-default = User.new(email: 'default@localhost', password: 'test')
+default = User.new(email: 'default@localhost', password: 'test', role_id: 'Administrator')
 default.save
+
+# Create Roles...
+admin = Role.new({ name: 'Administrator' })
+admin.save

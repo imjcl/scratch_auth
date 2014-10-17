@@ -11,7 +11,7 @@ class User
   validates_confirmation_of :password
   validates_presence_of :password, on: :create
 
-  has_one :role
+  belongs_to :role
 
   def encrypt_password
     self.password_salt = BCrypt::Engine.generate_salt

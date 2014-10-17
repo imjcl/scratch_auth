@@ -7,6 +7,8 @@ table
       td
         = link_to u.email, user_path(u.id)
       td
+        = u.role_id
+      td
         = link_to 'Edit', user_edit_path(u.id)
       td
         = link_to 'Remove', user_remove_path(u.id) , data: { confirm: 'Are you sure?' }

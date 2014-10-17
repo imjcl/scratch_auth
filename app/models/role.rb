@@ -1,4 +1,7 @@
 class Role
+  include Mongoid::Document
   field :name, type: String
-  belongs_to :user
+  field :_id, type: String, default: ->{ name }
+
+  has_many :users
 end
