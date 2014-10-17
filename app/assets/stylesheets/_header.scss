@@ -1,5 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,300);
 header {
+  @extend .col-lg-4;
+  
   h1 {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;

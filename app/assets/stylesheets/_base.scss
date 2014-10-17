@@ -1,0 +1,7 @@
+.body {
+  @extend .container;
+}
+
+.page-wrap {
+  @extend .row;
+}
