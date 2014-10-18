@@ -9,7 +9,7 @@ table
       td
         = u.role_id
       
-      -if is_me? u
+      -if (is_admin? or is_me? u)
         td  
           = link_to 'Edit', user_edit_path(u.id)
       - if is_admin?
