@@ -1,3 +1,14 @@
 == README
 
 This application just runs a very basic authentication mechanism.
+
+=== Usage
+
+If you want to use the existing structure in the repository you would need to do the following:
+
+  * Rename your application in config/application.rb
+  * Run 'rails g mongoid:config'
+
+Also have a look at db/seeds.rb to see what is being created in the database if you run 'rake db:seed' for the default users / roles.
+
+Enjoy!
