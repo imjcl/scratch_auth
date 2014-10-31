@@ -16,4 +16,4 @@
 /tmp
 
 # Ignore image assets
-/assets/images
+/app/assets/images
